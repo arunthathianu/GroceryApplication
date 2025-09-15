@@ -26,7 +26,6 @@ public class TestNGBase {
 		//driver = new FirefoxDriver();
 		driver.get("https://groceryapp.uniqassosiates.com/admin/login");
 		driver.manage().window().maximize();
-		driver.getTitle();
 	}
 	
 	@AfterMethod
