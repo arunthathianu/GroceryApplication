@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -27,6 +28,11 @@ public class LoginTest extends TestNGBase{
 		WebElement signIn_button = driver.findElement(By.xpath("//button[text()='Sign In']"));
 		signIn_button.click();
 		
+		String expected = "https://groceryapp.uniqassosiates.com/admin"; //after signin
+		
+		String actual = driver.getCurrentUrl(); //after signin
+		
+		Assert.assertEquals(actual,expected,"Login is not succuessfull with vaild credentials");
 	}
 	
 	@Test(priority = 2, description = "verfiy with invalid username and valid password")
@@ -43,6 +49,12 @@ public class LoginTest extends TestNGBase{
 		
 		WebElement signIn_button = driver.findElement(By.xpath("//button[text()='Sign In']"));
 		signIn_button.click();
+		
+		String expected = "https://groceryapp.uniqassosiates.com/admin/login";
+		
+		String actual = driver.getCurrentUrl();
+		
+		Assert.assertEquals(actual, expected, "Login is succuessfull with invaild credentials");
 		
 	}
 	
@@ -61,6 +73,12 @@ public class LoginTest extends TestNGBase{
 		WebElement signIn_button = driver.findElement(By.xpath("//button[text()='Sign In']"));
 		signIn_button.click();
 		
+		String expected = "https://groceryapp.uniqassosiates.com/admin/login";
+		
+		String actual = driver.getCurrentUrl();
+		
+		Assert.assertEquals(actual, expected, "Login is succuessfull with invaild credentials");
+		
 	}
 	
 	@Test(priority = 4, description = "verify with invalid username and invaild password", dataProvider = "loginProvider")
@@ -68,8 +86,6 @@ public class LoginTest extends TestNGBase{
 	{
 //		String usernameValue = ExcelUtility.getStringData(4, 0, "LoginPage");
 //		String passwordValue = ExcelUtility.getStringData(4, 1, "LoginPage");
-		
-		
 		
 		WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
 		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
@@ -79,6 +95,12 @@ public class LoginTest extends TestNGBase{
 		
 		WebElement signIn_button = driver.findElement(By.xpath("//button[text()='Sign In']"));
 		signIn_button.click();
+		
+		String expected = "https://groceryapp.uniqassosiates.com/admin/login";
+		
+		String actual = driver.getCurrentUrl();
+		
+		Assert.assertEquals(actual, expected, "Login is succuessfull with invaild credentials");
 		
 	}
 	
