@@ -9,6 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import pages.LoginPage;
+import pages.NewsPage;
 import utilities.ExcelUtility;
 
 public class NewsTest extends TestNGBase{
@@ -16,31 +18,55 @@ public class NewsTest extends TestNGBase{
 	@Test(description = "Add New News in Manage News page")
 	public void verifyAddNews() throws IOException
 	{
+
 		String usernameValue = ExcelUtility.getStringData(1, 0, "LoginPage");
 		String passwordValue = ExcelUtility.getStringData(1, 1, "LoginPage");
 		
-		WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
-		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
+//		WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
+//		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
+//		
+//		username.sendKeys(usernameValue);
+//		password.sendKeys(passwordValue);
+//		
+//		WebElement signIn_button = driver.findElement(By.xpath("//button[text()='Sign In']"));
+//		signIn_button.click();
 		
-		username.sendKeys(usernameValue);
-		password.sendKeys(passwordValue);
+		LoginPage login = new LoginPage(driver);
+		login.enterUserName(usernameValue);
+		login.enterPassword(passwordValue);
+		login.clickSignIN();
 		
-		WebElement signIn_button = driver.findElement(By.xpath("//button[text()='Sign In']"));
-		signIn_button.click();
+		NewsPage newsPage = new NewsPage(driver);
 		
+		newsPage.news_morinfo();
 		
-		WebElement news_moreinfo = driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']"));
-		news_moreinfo.click();
+		newsPage.addNewNews();
 		
-		WebElement addNew_News = driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-danger']"));
-		addNew_News.click();
+		newsPage.enterNewNews();
 		
+		newsPage.saveNewNews();
 		
-		WebElement new_News = driver.findElement(By.xpath("//textarea[@id='news']"));
-		new_News.sendKeys("This is sample News");
+		newsPage.addedNewNewsAlert();
 		
-		WebElement save_news = driver.findElement(By.xpath("//button[@name='create']"));
-		save_news.click();
+//		WebElement news_moreinfo = driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']"));
+//		news_moreinfo.click();
+//		
+//		WebElement addNew_News = driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-danger']"));
+//		addNew_News.click();
+//		
+		
+//		WebElement new_News = driver.findElement(By.xpath("//textarea[@id='news']"));
+//		new_News.sendKeys("This is sample News");
+//		
+//		WebElement save_news = driver.findElement(By.xpath("//button[@name='create']"));
+//		save_news.click();
+		
+//		WebElement newsalert = driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
+//		boolean isNewsAlertDisplayed = newsalert.isDisplayed();
+		
+		boolean isNewsAlertDisplayed = newsPage.addedNewNewsAlert();
+		Assert.assertTrue(isNewsAlertDisplayed, "Not Displayed");
+		
 	}
 	
 	@Test(description = "Click on Home button to back to Home Page")
