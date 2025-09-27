@@ -1,6 +1,7 @@
 package base;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,13 +31,14 @@ public class TestNGBase {
 		//driver = new FirefoxDriver();
 		driver.get("https://groceryapp.uniqassosiates.com/admin/login");
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 	
 	@AfterMethod
 	public void browserclose()
 	{
 		driver.close();	//tab
-		driver.quit();	//window
+		//driver.quit();	//window
 	}
 	
 	@AfterMethod(alwaysRun = true)	

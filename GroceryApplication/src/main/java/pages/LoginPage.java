@@ -6,12 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class LoginPage {
 	
 	public WebDriver driver;
 	
 	PageUtility pageUtility = new PageUtility();
+	WaitUtility waitUtility = new WaitUtility();
 	
 	public LoginPage(WebDriver driver)
 	{
@@ -24,6 +26,7 @@ public class LoginPage {
 	{
 		//WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
 		//username.sendKeys(usernameValue);
+		waitUtility.waitUntilElementIsVisible(driver, username);
 		pageUtility.sendDataToElement(username, usernameValue);
 		
 	}
@@ -33,6 +36,7 @@ public class LoginPage {
 	{
 		//WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
 		//password.sendKeys(passwordValue);
+		waitUtility.waitUntilElementIsVisible(driver, password);
 		pageUtility.sendDataToElement(password, passwordValue);
 	}
 	
@@ -41,6 +45,7 @@ public class LoginPage {
 	{
 		//WebElement signIn_button = driver.findElement(By.xpath("//button[text()='Sign In']"));
 		//signIn_button.click();
+		waitUtility.waitUntilClickable(driver, signIn_button);
 		pageUtility.clickOnElement(signIn_button);
 	}
 

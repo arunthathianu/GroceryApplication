@@ -6,11 +6,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class AdminPage {
 	
 	public WebDriver driver;
 	PageUtility pageUtility = new PageUtility();
+	WaitUtility waitUtility = new WaitUtility();
 	
 	public AdminPage(WebDriver driver)
 	{
@@ -23,6 +25,7 @@ public class AdminPage {
 	{
 		//WebElement adminmoreinfo = driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']"));
 		//adminmoreinfo.click();
+		waitUtility.waitUntilClickable(driver, adminmoreinfo);
 		pageUtility.clickOnElement(adminmoreinfo);
 	}
 	
@@ -31,6 +34,7 @@ public class AdminPage {
 	{
 		//WebElement new_button = driver.findElement(By.xpath("//a[contains(@class,'btn-danger') and contains(text(),'New')]"));
 		//new_button.click();
+		waitUtility.waitUntilClickable(driver, new_button);
 		pageUtility.clickOnElement(new_button);
 	}
 	
@@ -64,6 +68,7 @@ public class AdminPage {
 	{
 		//WebElement save = driver.findElement(By.xpath("//button[@name='Create']"));
 		//save.click();
+		waitUtility.waitUntilClickable(driver, save);
 		pageUtility.clickOnElement(save);
 	}
 	
@@ -80,6 +85,7 @@ public class AdminPage {
 	{
 //		WebElement search_button = driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-primary']"));
 //		search_button.click();
+		waitUtility.waitUntilClickable(driver, search_button);
 		pageUtility.clickOnElement(search_button);
 	}
 	
@@ -99,6 +105,7 @@ public class AdminPage {
 //		Select select = new Select(dropdown);
 //		
 //		select.selectByVisibleText("Admin");
+		waitUtility.waitUntilElementIsSelected(driver, userTypedropdown);
 		pageUtility.selectDataWithVisibleText(userTypedropdown, "Admin");
 	}
 	
@@ -107,6 +114,7 @@ public class AdminPage {
 	{
 //		WebElement search_button_new = driver.findElement(By.xpath("//button[@name='Search']"));
 //		search_button_new.click();
+		waitUtility.waitUntilClickable(driver, search_button_new);
 		pageUtility.clickOnElement(search_button_new);
 		
 	}
@@ -116,6 +124,7 @@ public class AdminPage {
 	{
 //		WebElement searchedUserTable = driver.findElement(By.xpath("//h4[@class='card-title' and text()='Admin Users']"));
 //		
+		waitUtility.waitUntilElementIsVisible(driver, searchedUserTable);
 		boolean isSearchUserDisplayed = searchedUserTable.isDisplayed();
 		
 		return isSearchUserDisplayed;
@@ -126,6 +135,7 @@ public class AdminPage {
 	{
 		//WebElement reset_button = driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-warning']"));
 //		reset_button.click();
+		waitUtility.waitUntilClickable(driver, reset_button);
 		pageUtility.clickOnElement(reset_button);
 	}
 	
@@ -133,6 +143,7 @@ public class AdminPage {
 	public boolean isAdminUserDisplayed()
 	{
 		//WebElement adminUserTableDisplayedOnClickOfReset = driver.findElement(By.xpath("//h4[@class='card-title' and text() ='Admin Users']"));
+		waitUtility.waitUntilElementIsVisible(driver, adminUserTableDisplayedOnClickOfReset);
 		boolean isAdminUserTableDisplayedOnClickOfReset = adminUserTableDisplayedOnClickOfReset.isDisplayed();
 		return isAdminUserTableDisplayedOnClickOfReset;
 	}
