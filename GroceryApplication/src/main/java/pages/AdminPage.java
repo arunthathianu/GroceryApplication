@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import constant.Constants;
 import utilities.PageUtility;
 import utilities.WaitUtility;
 
@@ -97,7 +98,7 @@ public class AdminPage {
 		pageUtility.sendDataToElement(search_username, randomname);
 	}
 	
-	@FindBy(xpath = "//Select[@id='ut']")WebElement userTypedropdown;
+	@FindBy(xpath = "//select[@id='ut']")WebElement userTypedropdown;
 	public void selectUserType()
 	{
 //		WebElement dropdown = driver.findElement(By.xpath("//Select[@id='ut']"));
@@ -106,7 +107,7 @@ public class AdminPage {
 //		
 //		select.selectByVisibleText("Admin");
 		waitUtility.waitUntilElementIsSelected(driver, userTypedropdown);
-		pageUtility.selectDataWithVisibleText(userTypedropdown, "Admin");
+		pageUtility.selectDataWithVisibleText(userTypedropdown, Constants.ADMINUSER);
 	}
 	
 	@FindBy(xpath = "//button[@name='Search']")WebElement search_button_new;

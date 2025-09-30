@@ -6,6 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import constant.Constants;
+import constant.Messages;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -13,11 +15,11 @@ import utilities.ExcelUtility;
 public class HomeTest extends TestNGBase{
 	
 	
-	@Test(description = "verify the logout")
+	@Test(description = "verify the logout", groups = {"smoke"})
 	public void verifyLogout() throws IOException
 	{
-		String usernameValue = ExcelUtility.getStringData(1, 0, "LoginPage");
-		String passwordValue = ExcelUtility.getStringData(1, 1, "LoginPage");
+		String usernameValue = ExcelUtility.getStringData(1, 0, Constants.LOGINSHEET);
+		String passwordValue = ExcelUtility.getStringData(1, 1, Constants.LOGINSHEET);
 		
 //		WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
 //		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
@@ -49,7 +51,7 @@ public class HomeTest extends TestNGBase{
 		
 		String expected = driver.getCurrentUrl();
 		
-		Assert.assertEquals(actual, expected,"Not succuessfully Logout");
+		Assert.assertEquals(actual, expected, Messages.LOGOUT_ASSERT);
 	}
 	
 

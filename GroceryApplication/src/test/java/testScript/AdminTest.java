@@ -6,6 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import constant.Constants;
+import constant.Messages;
 import pages.AdminPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -18,8 +20,8 @@ public class AdminTest extends TestNGBase{
 	@Test(priority = 1)
 	public void verifyAddUser() throws IOException
 	{
-		String usernameValue = ExcelUtility.getStringData(1, 0, "LoginPage");
-		String passwordValue = ExcelUtility.getStringData(1, 1, "LoginPage");
+		String usernameValue = ExcelUtility.getStringData(1, 0, Constants.LOGINSHEET);
+		String passwordValue = ExcelUtility.getStringData(1, 1, Constants.LOGINSHEET);
 		
 //		WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
 //		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
@@ -38,7 +40,7 @@ public class AdminTest extends TestNGBase{
 		FakerUtility fakerUtility = new FakerUtility();
 		String randomname=fakerUtility.createRandomUserName();
 		String randompassword=fakerUtility.createRandomPassword();
-		String usertype = ExcelUtility.getStringData(1, 2, "HomePage");
+		String usertype = ExcelUtility.getStringData(1, 2, Constants.HOMEPAGE_SHEET);
 		
 		
 		
@@ -46,7 +48,8 @@ public class AdminTest extends TestNGBase{
 		adminPage.ClickNewButton();
 		adminPage.send_UserName(randomname);
 		adminPage.send_password(randompassword);
-		adminPage.send_UserType(usertype);
+		//adminPage.send_UserType(usertype);
+		adminPage.send_UserType(Constants.ADMINUSER);
 		
 //		WebElement adminmoreinfo = driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']"));
 //		adminmoreinfo.click();
@@ -73,15 +76,15 @@ public class AdminTest extends TestNGBase{
 		
 		boolean isNewUserAddedAlert = adminPage.newAlert_isDisplayed();
 		
-		Assert.assertTrue(isNewUserAddedAlert, "New User Not Added");
+		Assert.assertTrue(isNewUserAddedAlert, Messages.ADMIN_ASSERT);
 		
 	}
 	
 	@Test(priority = 2, description  = "search the newly added user")
 	public void verifysearchUser() throws IOException
 	{
-		String usernameValue = ExcelUtility.getStringData(1, 0, "LoginPage");
-		String passwordValue = ExcelUtility.getStringData(1, 1, "LoginPage");
+		String usernameValue = ExcelUtility.getStringData(1, 0, Constants.LOGINSHEET);
+		String passwordValue = ExcelUtility.getStringData(1, 1, Constants.LOGINSHEET);
 //		
 //		WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
 //		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
@@ -127,7 +130,7 @@ public class AdminTest extends TestNGBase{
 		//WebElement searchedUserTable = driver.findElement(By.xpath("//h4[@class='card-title' and text()='Admin Users']"));
 		
 		boolean isSearchUserDisplayed = adminPage.searchUserTableDisplay();
-		Assert.assertTrue(isSearchUserDisplayed, "Search user Not displayed");
+		Assert.assertTrue(isSearchUserDisplayed, Messages.SEARCH_USER_ASSERT);
 		 
 	}
 	
@@ -159,7 +162,7 @@ public class AdminTest extends TestNGBase{
 		//WebElement adminUserTableDisplayedOnClickOfReset = driver.findElement(By.xpath("//h4[@class='card-title' and text() ='Admin Users']"));
 		boolean isAdminUserTableDisplayedOnClickOfReset = adminPage.searchUserTableDisplay();
 		
-		Assert.assertTrue(isAdminUserTableDisplayedOnClickOfReset,"Admin User Table not Displayed and Reset button is not working");
+		Assert.assertTrue(isAdminUserTableDisplayedOnClickOfReset, Messages.RESET_USER_ASSERT);
 		
 		
 	}

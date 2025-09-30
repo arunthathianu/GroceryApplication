@@ -9,6 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import constant.Constants;
+import constant.Messages;
 import pages.LoginPage;
 import pages.NewsPage;
 import utilities.ExcelUtility;
@@ -19,8 +21,8 @@ public class NewsTest extends TestNGBase{
 	public void verifyAddNews() throws IOException
 	{
 
-		String usernameValue = ExcelUtility.getStringData(1, 0, "LoginPage");
-		String passwordValue = ExcelUtility.getStringData(1, 1, "LoginPage");
+		String usernameValue = ExcelUtility.getStringData(1, 0, Constants.LOGINSHEET);
+		String passwordValue = ExcelUtility.getStringData(1, 1, Constants.LOGINSHEET);
 		
 //		WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
 //		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
@@ -65,15 +67,15 @@ public class NewsTest extends TestNGBase{
 //		boolean isNewsAlertDisplayed = newsalert.isDisplayed();
 		
 		boolean isNewsAlertDisplayed = newsPage.addedNewNewsAlert();
-		Assert.assertTrue(isNewsAlertDisplayed, "Not Displayed");
+		Assert.assertTrue(isNewsAlertDisplayed, Messages.ADD_NEWS_ASSERT);
 		
 	}
 	
 	@Test(description = "Click on Home button to back to Home Page")
 	public void verifyReturnHomePage() throws IOException
 	{
-		String usernameValue = ExcelUtility.getStringData(1, 0, "LoginPage");
-		String passwordValue = ExcelUtility.getStringData(1, 1, "LoginPage");
+		String usernameValue = ExcelUtility.getStringData(1, 0, Constants.LOGINSHEET);
+		String passwordValue = ExcelUtility.getStringData(1, 1, Constants.LOGINSHEET);
 		
 		WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
 		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
@@ -95,6 +97,6 @@ public class NewsTest extends TestNGBase{
 		
 		String actual = driver.getCurrentUrl();
 		
-		Assert.assertEquals(actual, expected, "Not redirected to homepage after click on home Button link in manage news");
+		Assert.assertEquals(actual, expected, Messages.NOT_REDIRECT_HOMEPAGE);
 	}
 }

@@ -7,16 +7,19 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import constant.Constants;
+import constant.Messages;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends TestNGBase{
 	
-	@Test(priority = 1, description = "verify login with valid credentials", retryAnalyzer = retry.Retry.class)	//flaky testcase
+	@Test(priority = 1, description = "verify login with valid credentials", retryAnalyzer = retry.Retry.class, groups = {"smoke"})	//flaky testcase
 	public void verifyValidUserNamePasswordLoginCredentials() throws IOException
 	{
-		String usernameValue = ExcelUtility.getStringData(1, 0, "LoginPage");
-		String passwordValue = ExcelUtility.getStringData(1, 1, "LoginPage");
+		String usernameValue = ExcelUtility.getStringData(1, 0, Constants.LOGINSHEET);
+		
+		String passwordValue = ExcelUtility.getStringData(1, 1, Constants.LOGINSHEET);
 		
 		//WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
 		
@@ -37,14 +40,14 @@ public class LoginTest extends TestNGBase{
 		
 		String actual = driver.getCurrentUrl(); //after signin
 		
-		Assert.assertEquals(actual,expected,"Login is not succuessfull with vaild credentials");
+		Assert.assertEquals(actual,expected,Messages.VALID_LOGIN_ASSERT);
 	}
 	
-	@Test(priority = 2, description = "verfiy with invalid username and valid password")
+	@Test(priority = 2, description = "verfiy with invalid username and valid password", groups = {"smoke"})
 	public void verifyInValidUserNameValidPasswordLoginCredentials() throws IOException
 	{
-		String usernameValue = ExcelUtility.getStringData(2, 0, "LoginPage");
-		String passwordValue = ExcelUtility.getStringData(2, 1, "LoginPage");
+		String usernameValue = ExcelUtility.getStringData(2, 0, Constants.LOGINSHEET);
+		String passwordValue = ExcelUtility.getStringData(2, 1, Constants.LOGINSHEET);
 		
 //		WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
 //		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
@@ -64,15 +67,15 @@ public class LoginTest extends TestNGBase{
 		
 		String actual = driver.getCurrentUrl();
 		
-		Assert.assertEquals(actual, expected, "Login is succuessfull with invaild credentials");
+		Assert.assertEquals(actual, expected, Messages.INVALID_LOGIN_ASSERT);
 		
 	}
 	
-	@Test(priority = 3, description = "verify with valid username and invalid password ")
+	@Test(priority = 3, description = "verify with valid username and invalid password ", groups = {"smoke"})
 	public void verifyValidUserNameInValidPasswordLoginCredentials() throws IOException
 	{
-		String usernameValue = ExcelUtility.getStringData(3, 0, "LoginPage");
-		String passwordValue = ExcelUtility.getStringData(3, 1, "LoginPage");
+		String usernameValue = ExcelUtility.getStringData(3, 0, Constants.LOGINSHEET);
+		String passwordValue = ExcelUtility.getStringData(3, 1, Constants.LOGINSHEET);
 		
 //		WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
 //		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
@@ -92,11 +95,11 @@ public class LoginTest extends TestNGBase{
 		
 		String actual = driver.getCurrentUrl();
 		
-		Assert.assertEquals(actual, expected, "Login is succuessfull with invaild credentials");
+		Assert.assertEquals(actual, expected, Messages.INVALID_LOGIN_ASSERT);
 		
 	}
 	
-	@Test(priority = 4, description = "verify with invalid username and invaild password", dataProvider = "loginProvider")
+	@Test(priority = 4, description = "verify with invalid username and invaild password", dataProvider = "loginProvider", groups = {"smoke"})
 	public void verifyInValidUserNameInValidPasswordLoginCredentials(String usernameValue, String passwordValue) throws IOException
 	{
 //		String usernameValue = ExcelUtility.getStringData(4, 0, "LoginPage");
@@ -120,7 +123,7 @@ public class LoginTest extends TestNGBase{
 		
 		String actual = driver.getCurrentUrl();
 		
-		Assert.assertEquals(actual, expected, "Login is succuessfull with invaild credentials");
+		Assert.assertEquals(actual, expected, Messages.INVALID_LOGIN_ASSERT);
 		
 	}
 	
