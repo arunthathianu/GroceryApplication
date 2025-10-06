@@ -14,7 +14,7 @@ import utilities.ExcelUtility;
 
 public class HomeTest extends TestNGBase{
 	
-	
+	HomePage home_page;
 	@Test(description = "verify the logout", groups = {"smoke"})
 	public void verifyLogout() throws IOException
 	{
@@ -31,9 +31,11 @@ public class HomeTest extends TestNGBase{
 //		signIn_button.click();
 		
 		LoginPage login = new LoginPage(driver);
-		login.enterUserName(usernameValue);
-		login.enterPassword(passwordValue);
-		login.clickSignIN();
+//		login.enterUserName(usernameValue);
+//		login.enterPassword(passwordValue);
+//		login.clickSignIN();
+		
+		login.enterPassword(usernameValue).enterPassword(passwordValue).clickSignIN();
 		
 //		WebElement admin_button = driver.findElement(By.xpath("//img[@src='https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/avatar5.png']"));
 //		admin_button.click();
@@ -41,10 +43,11 @@ public class HomeTest extends TestNGBase{
 //		WebElement logout_button = driver.findElement(By.xpath("//i[@class='ace-icon fa fa-power-off']"));
 //		logout_button.click();
 		
-		HomePage home_page = new HomePage(driver);
+		//HomePage home_page = new HomePage(driver);
 		
 		home_page.admin_Login();
-		home_page.admin_Logout();
+//		home_page.admin_Logout();
+		login = home_page.admin_Logout();
 		
 		
 		String actual = "https://groceryapp.uniqassosiates.com/admin/login";

@@ -1,240 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-03T13:31:24 IST" name="Grouping" finished-at="2025-10-03T13:32:14 IST" duration-ms="49478">
+  <suite started-at="2025-10-06T12:01:39 IST" name="Default suite" finished-at="2025-10-06T12:01:39 IST" duration-ms="284">
     <groups>
-      <group name="smoke">
-        <method signature="HomeTest.verifyLogout()[pri:0, instance:testScript.HomeTest@6771beb3]" name="verifyLogout" class="testScript.HomeTest"/>
-        <method signature="LoginTest.verifyValidUserNamePasswordLoginCredentials()[pri:1, instance:testScript.LoginTest@229f66ed]" name="verifyValidUserNamePasswordLoginCredentials" class="testScript.LoginTest"/>
-        <method signature="LoginTest.verifyInValidUserNameValidPasswordLoginCredentials()[pri:2, instance:testScript.LoginTest@229f66ed]" name="verifyInValidUserNameValidPasswordLoginCredentials" class="testScript.LoginTest"/>
-        <method signature="LoginTest.verifyValidUserNameInValidPasswordLoginCredentials()[pri:3, instance:testScript.LoginTest@229f66ed]" name="verifyValidUserNameInValidPasswordLoginCredentials" class="testScript.LoginTest"/>
-        <method signature="LoginTest.verifyInValidUserNameInValidPasswordLoginCredentials(java.lang.String,java.lang.String)[pri:4, instance:testScript.LoginTest@229f66ed]" name="verifyInValidUserNameInValidPasswordLoginCredentials" class="testScript.LoginTest"/>
-      </group> <!-- smoke -->
     </groups>
-    <test started-at="2025-10-03T13:31:24 IST" name="Test" finished-at="2025-10-03T13:32:14 IST" duration-ms="49478">
-      <class name="testScript.LoginTest">
-        <test-method is-config="true" signature="initializebrowser(java.lang.String)[pri:0, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:31:38 IST" name="initializebrowser" finished-at="2025-10-03T13:31:42 IST" duration-ms="3679" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2025-10-06T12:01:39 IST" name="Default test" finished-at="2025-10-06T12:01:39 IST" duration-ms="284">
+      <class name="testScript.NewsTest">
+        <test-method is-config="true" signature="initializebrowser(java.lang.String)[pri:0, instance:testScript.NewsTest@55141def]" started-at="2025-10-06T12:01:39 IST" name="initializebrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1759732299817" status="FAIL">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'browser' is required by BeforeMethod on method initializebrowser but has not been marked @Optional or defined
+in C:\Users\arunt\AppData\Local\Temp\testng-eclipse-447322393\testng-customsuite.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'browser' is required by BeforeMethod on method initializebrowser but has not been marked @Optional or defined
+in C:\Users\arunt\AppData\Local\Temp\testng-eclipse-447322393\testng-customsuite.xml
+at org.testng.internal.Parameters.createParams(Parameters.java:264)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
+at org.testng.internal.Parameters.createParameters(Parameters.java:690)
+at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializebrowser -->
-        <test-method signature="verifyValidUserNamePasswordLoginCredentials()[pri:1, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:31:42 IST" name="verifyValidUserNamePasswordLoginCredentials" description="verify login with valid credentials" finished-at="2025-10-03T13:31:44 IST" duration-ms="2003" status="PASS">
+        <test-method signature="verifyReturnHomePage()[pri:0, instance:testScript.NewsTest@55141def]" started-at="2025-10-06T12:01:39 IST" name="verifyReturnHomePage" description="Click on Home button to back to Home Page" finished-at="2025-10-06T12:01:39 IST" duration-ms="0" status="SKIP">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'browser' is required by BeforeMethod on method initializebrowser but has not been marked @Optional or defined
+in C:\Users\arunt\AppData\Local\Temp\testng-eclipse-447322393\testng-customsuite.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'browser' is required by BeforeMethod on method initializebrowser but has not been marked @Optional or defined
+in C:\Users\arunt\AppData\Local\Temp\testng-eclipse-447322393\testng-customsuite.xml
+at org.testng.internal.Parameters.createParams(Parameters.java:264)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
+at org.testng.internal.Parameters.createParameters(Parameters.java:690)
+at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyValidUserNamePasswordLoginCredentials -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:31:44 IST" name="driverQuit" finished-at="2025-10-03T13:31:44 IST" duration-ms="685" status="PASS">
+        </test-method> <!-- verifyReturnHomePage -->
+        <test-method is-config="true" signature="browserclose()[pri:0, instance:testScript.NewsTest@55141def]" started-at="2025-10-06T12:01:39 IST" name="browserclose" finished-at="2025-10-06T12:01:39 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserclose -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.NewsTest@55141def]" started-at="2025-10-06T12:01:39 IST" name="driverQuit" finished-at="2025-10-06T12:01:39 IST" duration-ms="12" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyValidUserNamePasswordLoginCredentials status=SUCCESS method=LoginTest.verifyValidUserNamePasswordLoginCredentials()[pri:1, instance:testScript.LoginTest@229f66ed] output={null}]]]>
+                <![CDATA[[TestResult name=verifyReturnHomePage status=SKIP method=NewsTest.verifyReturnHomePage()[pri:0, instance:testScript.NewsTest@55141def] output={null}]]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.quit()" because "this.driver" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.quit()" because "this.driver" is null
+at base.TestNGBase.driverQuit(TestNGBase.java:82)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:802)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:622)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-        <test-method is-config="true" signature="initializebrowser(java.lang.String)[pri:0, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:31:44 IST" name="initializebrowser" finished-at="2025-10-03T13:31:48 IST" duration-ms="3805" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializebrowser -->
-        <test-method signature="verifyInValidUserNameValidPasswordLoginCredentials()[pri:2, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:31:48 IST" name="verifyInValidUserNameValidPasswordLoginCredentials" description="verfiy with invalid username and valid password" finished-at="2025-10-03T13:31:49 IST" duration-ms="1287" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyInValidUserNameValidPasswordLoginCredentials -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:31:49 IST" name="driverQuit" finished-at="2025-10-03T13:31:50 IST" duration-ms="1022" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyInValidUserNameValidPasswordLoginCredentials status=SUCCESS method=LoginTest.verifyInValidUserNameValidPasswordLoginCredentials()[pri:2, instance:testScript.LoginTest@229f66ed] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverQuit -->
-        <test-method is-config="true" signature="initializebrowser(java.lang.String)[pri:0, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:31:50 IST" name="initializebrowser" finished-at="2025-10-03T13:31:54 IST" duration-ms="3559" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializebrowser -->
-        <test-method signature="verifyValidUserNameInValidPasswordLoginCredentials()[pri:3, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:31:54 IST" name="verifyValidUserNameInValidPasswordLoginCredentials" description="verify with valid username and invalid password " finished-at="2025-10-03T13:31:55 IST" duration-ms="1430" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyValidUserNameInValidPasswordLoginCredentials -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:31:55 IST" name="driverQuit" finished-at="2025-10-03T13:31:56 IST" duration-ms="715" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyValidUserNameInValidPasswordLoginCredentials status=SUCCESS method=LoginTest.verifyValidUserNameInValidPasswordLoginCredentials()[pri:3, instance:testScript.LoginTest@229f66ed] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverQuit -->
-        <test-method is-config="true" signature="initializebrowser(java.lang.String)[pri:0, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:31:56 IST" name="initializebrowser" finished-at="2025-10-03T13:32:00 IST" duration-ms="3597" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializebrowser -->
-        <test-method signature="verifyInValidUserNameInValidPasswordLoginCredentials(java.lang.String,java.lang.String)[pri:4, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:32:00 IST" name="verifyInValidUserNameInValidPasswordLoginCredentials" description="verify with invalid username and invaild password" data-provider="loginProvider" finished-at="2025-10-03T13:32:01 IST" duration-ms="1176" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[user]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[password]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyInValidUserNameInValidPasswordLoginCredentials -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:32:01 IST" name="driverQuit" finished-at="2025-10-03T13:32:02 IST" duration-ms="886" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyInValidUserNameInValidPasswordLoginCredentials status=SUCCESS method=LoginTest.verifyInValidUserNameInValidPasswordLoginCredentials(java.lang.String,java.lang.String)[pri:4, instance:testScript.LoginTest@229f66ed] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverQuit -->
-        <test-method is-config="true" signature="initializebrowser(java.lang.String)[pri:0, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:32:02 IST" name="initializebrowser" finished-at="2025-10-03T13:32:05 IST" duration-ms="3665" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializebrowser -->
-        <test-method signature="verifyInValidUserNameInValidPasswordLoginCredentials(java.lang.String,java.lang.String)[pri:4, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:32:05 IST" name="verifyInValidUserNameInValidPasswordLoginCredentials" description="verify with invalid username and invaild password" data-provider="loginProvider" finished-at="2025-10-03T13:32:07 IST" duration-ms="1471" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[username]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[pass]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyInValidUserNameInValidPasswordLoginCredentials -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:32:07 IST" name="driverQuit" finished-at="2025-10-03T13:32:08 IST" duration-ms="818" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyInValidUserNameInValidPasswordLoginCredentials status=SUCCESS method=LoginTest.verifyInValidUserNameInValidPasswordLoginCredentials(java.lang.String,java.lang.String)[pri:4, instance:testScript.LoginTest@229f66ed] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverQuit -->
-        <test-method is-config="true" signature="initializebrowser(java.lang.String)[pri:0, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:32:08 IST" name="initializebrowser" finished-at="2025-10-03T13:32:12 IST" duration-ms="3974" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializebrowser -->
-        <test-method signature="verifyInValidUserNameInValidPasswordLoginCredentials(java.lang.String,java.lang.String)[pri:4, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:32:12 IST" name="verifyInValidUserNameInValidPasswordLoginCredentials" description="verify with invalid username and invaild password" data-provider="loginProvider" finished-at="2025-10-03T13:32:13 IST" duration-ms="1389" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[user1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[password1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyInValidUserNameInValidPasswordLoginCredentials -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@229f66ed]" started-at="2025-10-03T13:32:13 IST" name="driverQuit" finished-at="2025-10-03T13:32:14 IST" duration-ms="708" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyInValidUserNameInValidPasswordLoginCredentials status=SUCCESS method=LoginTest.verifyInValidUserNameInValidPasswordLoginCredentials(java.lang.String,java.lang.String)[pri:4, instance:testScript.LoginTest@229f66ed] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverQuit -->
-      </class> <!-- testScript.LoginTest -->
-      <class name="testScript.HomeTest">
-        <test-method is-config="true" signature="initializebrowser(java.lang.String)[pri:0, instance:testScript.HomeTest@6771beb3]" started-at="2025-10-03T13:31:24 IST" name="initializebrowser" finished-at="2025-10-03T13:31:31 IST" duration-ms="6738" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializebrowser -->
-        <test-method signature="verifyLogout()[pri:0, instance:testScript.HomeTest@6771beb3]" started-at="2025-10-03T13:31:31 IST" name="verifyLogout" description="verify the logout" finished-at="2025-10-03T13:31:37 IST" duration-ms="5804" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLogout -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.HomeTest@6771beb3]" started-at="2025-10-03T13:31:37 IST" name="driverQuit" finished-at="2025-10-03T13:31:38 IST" duration-ms="883" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyLogout status=SUCCESS method=HomeTest.verifyLogout()[pri:0, instance:testScript.HomeTest@6771beb3] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverQuit -->
-      </class> <!-- testScript.HomeTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Grouping -->
+      </class> <!-- testScript.NewsTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

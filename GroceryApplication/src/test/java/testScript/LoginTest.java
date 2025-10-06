@@ -9,10 +9,13 @@ import org.testng.annotations.Test;
 import base.TestNGBase;
 import constant.Constants;
 import constant.Messages;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends TestNGBase{
+	
+	HomePage homePageTest;
 	
 	@Test(priority = 1, description = "verify login with valid credentials", retryAnalyzer = retry.Retry.class, groups = {"smoke"})	//flaky testcase
 	public void verifyValidUserNamePasswordLoginCredentials() throws IOException
@@ -24,9 +27,11 @@ public class LoginTest extends TestNGBase{
 		//WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
 		
 		LoginPage login = new LoginPage(driver);
-		login.enterUserName(usernameValue);
-		login.enterPassword(passwordValue);
-		login.clickSignIN();
+		login.enterUserName(usernameValue).enterPassword(passwordValue);
+		homePageTest = login.clickSignIN();
+		//login.enterUserName(usernameValue);
+//		login.enterPassword(passwordValue);
+//		login.clickSignIN();
 		
 		//WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
 		
@@ -59,9 +64,11 @@ public class LoginTest extends TestNGBase{
 //		signIn_button.click();
 		
 		LoginPage login = new LoginPage(driver);
-		login.enterUserName(usernameValue);
-		login.enterPassword(passwordValue);
-		login.clickSignIN();
+//		login.enterUserName(usernameValue);
+//		login.enterPassword(passwordValue);
+//		login.clickSignIN();
+		
+		login.enterUserName(usernameValue).enterPassword(passwordValue).clickSignIN();
 		
 		String expected = "https://groceryapp.uniqassosiates.com/admin/login";
 		
@@ -87,9 +94,10 @@ public class LoginTest extends TestNGBase{
 //		signIn_button.click();
 		
 		LoginPage login = new LoginPage(driver);
-		login.enterUserName(usernameValue);
-		login.enterPassword(passwordValue);
-		login.clickSignIN();
+//		login.enterUserName(usernameValue);
+//		login.enterPassword(passwordValue);
+//		login.clickSignIN();
+		login.enterUserName(usernameValue).enterPassword(passwordValue).clickSignIN();
 		
 		String expected = "https://groceryapp.uniqassosiates.com/admin/login";
 		
@@ -115,9 +123,10 @@ public class LoginTest extends TestNGBase{
 //		signIn_button.click();
 		
 		LoginPage login = new LoginPage(driver);
-		login.enterUserName(usernameValue);
-		login.enterPassword(passwordValue);
-		login.clickSignIN();
+//		login.enterUserName(usernameValue);
+//		login.enterPassword(passwordValue);
+//		login.clickSignIN();
+		login.enterUserName(usernameValue).enterPassword(passwordValue).clickSignIN();
 		
 		String expected = "https://groceryapp.uniqassosiates.com/admin/login";
 		

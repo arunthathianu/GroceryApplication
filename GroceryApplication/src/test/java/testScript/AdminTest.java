@@ -9,6 +9,7 @@ import base.TestNGBase;
 import constant.Constants;
 import constant.Messages;
 import pages.AdminPage;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
@@ -16,6 +17,7 @@ import utilities.FakerUtility;
 public class AdminTest extends TestNGBase{
 	
 	AdminPage adminPage = new AdminPage(driver);
+	HomePage home_page;
 	
 	@Test(priority = 1)
 	public void verifyAddUser() throws IOException
@@ -33,9 +35,11 @@ public class AdminTest extends TestNGBase{
 //		signIn_button.click();
 		
 		LoginPage login = new LoginPage(driver);
-		login.enterUserName(usernameValue);
-		login.enterPassword(passwordValue);
-		login.clickSignIN();
+//		login.enterUserName(usernameValue);
+//		login.enterPassword(passwordValue);
+//		login.clickSignIN();
+		login.enterUserName(usernameValue).enterPassword(passwordValue);
+		home_page = login.clickSignIN();
 		
 		FakerUtility fakerUtility = new FakerUtility();
 		String randomname=fakerUtility.createRandomUserName();
@@ -44,12 +48,13 @@ public class AdminTest extends TestNGBase{
 		
 		
 		
-		adminPage.admin_moreInfo();
-		adminPage.ClickNewButton();
-		adminPage.send_UserName(randomname);
-		adminPage.send_password(randompassword);
+		adminPage = home_page.admin_moreInfo();
+		adminPage.ClickNewButton().send_UserName(randomname).send_password(randompassword).send_UserType(Constants.ADMINUSER);
+//		adminPage.ClickNewButton();
+//		adminPage.send_UserName(randomname);
+//		adminPage.send_password(randompassword);
 		//adminPage.send_UserType(usertype);
-		adminPage.send_UserType(Constants.ADMINUSER);
+//		adminPage.send_UserType(Constants.ADMINUSER);
 		
 //		WebElement adminmoreinfo = driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']"));
 //		adminmoreinfo.click();
@@ -96,9 +101,11 @@ public class AdminTest extends TestNGBase{
 //		signIn_button.click();
 		
 		LoginPage login = new LoginPage(driver);
-		login.enterUserName(usernameValue);
-		login.enterPassword(passwordValue);
-		login.clickSignIN();
+//		login.enterUserName(usernameValue);
+//		login.enterPassword(passwordValue);
+//		login.clickSignIN();
+		
+		login.enterUserName(usernameValue).enterPassword(passwordValue).clickSignIN();
 		
 		FakerUtility fakerUtility = new FakerUtility();
 		String randomname = fakerUtility.createRandomUserName();
@@ -121,11 +128,14 @@ public class AdminTest extends TestNGBase{
 //		WebElement search_button_new = driver.findElement(By.xpath("//button[@name='Search']"));
 //		search_button_new.click();
 				
-		adminPage.admin_moreInfo();
-		adminPage.search_button();
-		adminPage.searchUserName(randomname);
-		adminPage.selectUserType();
-		adminPage.search_button();
+		//adminPage.admin_moreInfo();
+		
+//		adminPage.search_button();
+//		adminPage.searchUserName(randomname);
+//		adminPage.selectUserType();
+//		adminPage.search_button();
+		
+		adminPage.serachButtonClick().searchUserName(randomname).selectUserType().search_button();
 		
 		//WebElement searchedUserTable = driver.findElement(By.xpath("//h4[@class='card-title' and text()='Admin Users']"));
 		
@@ -150,9 +160,10 @@ public class AdminTest extends TestNGBase{
 //		signIn_button.click();
 		
 		LoginPage login = new LoginPage(driver);
-		login.enterUserName(usernameValue);
-		login.enterPassword(passwordValue);
-		login.clickSignIN();
+//		login.enterUserName(usernameValue);
+//		login.enterPassword(passwordValue);
+//		login.clickSignIN();
+		login.enterUserName(usernameValue).enterPassword(passwordValue).clickSignIN();
 		
 //		WebElement reset_button = driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-warning']"));
 //		reset_button.click();
