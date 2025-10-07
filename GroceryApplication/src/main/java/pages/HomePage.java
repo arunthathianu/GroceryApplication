@@ -25,6 +25,7 @@ public class HomePage {
 	{
 		//WebElement admin_button = driver.findElement(By.xpath("//img[@src='https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/avatar5.png']"));
 		//admin_button.click();
+		waitUtility.waitUntilClickable(driver, admin_button);
 		pageUtility.clickOnElement(admin_button);
 		return this;
 	}
@@ -37,6 +38,7 @@ public class HomePage {
 		pageUtility.clickOnElement(logout_button);
 		return new LoginPage(driver);
 	}
+	
 	
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']")WebElement adminmoreinfo;
 	public AdminPage admin_moreInfo()

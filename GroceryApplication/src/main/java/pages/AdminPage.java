@@ -156,4 +156,13 @@ public class AdminPage {
 		boolean isAdminUserTableDisplayedOnClickOfReset = adminUserTableDisplayedOnClickOfReset.isDisplayed();
 		return isAdminUserTableDisplayedOnClickOfReset;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import base.TestNGBase;
 import constant.Constants;
 import constant.Messages;
+import pages.AdminPage;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -15,6 +16,7 @@ import utilities.ExcelUtility;
 public class HomeTest extends TestNGBase{
 	
 	HomePage home_page;
+	AdminPage admin_page;
 	@Test(description = "verify the logout", groups = {"smoke"})
 	public void verifyLogout() throws IOException
 	{
@@ -35,7 +37,8 @@ public class HomeTest extends TestNGBase{
 //		login.enterPassword(passwordValue);
 //		login.clickSignIN();
 		
-		login.enterPassword(usernameValue).enterPassword(passwordValue).clickSignIN();
+		login.enterUserName(usernameValue).enterPassword(passwordValue);
+		home_page=login.clickSignIN();
 		
 //		WebElement admin_button = driver.findElement(By.xpath("//img[@src='https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/avatar5.png']"));
 //		admin_button.click();

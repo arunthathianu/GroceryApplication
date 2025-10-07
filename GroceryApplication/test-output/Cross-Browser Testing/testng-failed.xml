@@ -4,8 +4,8 @@
   <listeners>
     <listener class-name="reportGeneration.Listener"/>
   </listeners>
-  <test thread-count="5" name="Edge Test(failed)">
-    <parameter name="browser" value="edge"/>
+  <test thread-count="5" name="Chrome Test(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="testScript.HomeTest">
         <methods>
@@ -16,5 +16,18 @@
         </methods>
       </class> <!-- testScript.HomeTest -->
     </classes>
-  </test> <!-- Edge Test(failed) -->
+  </test> <!-- Chrome Test(failed) -->
+  <test thread-count="5" name="Firefox Test(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="testScript.HomeTest">
+        <methods>
+          <include name="driverQuit"/>
+          <include name="verifyLogout"/>
+          <include name="browserclose"/>
+          <include name="initializebrowser"/>
+        </methods>
+      </class> <!-- testScript.HomeTest -->
+    </classes>
+  </test> <!-- Firefox Test(failed) -->
 </suite> <!-- Failed suite [Cross-Browser Testing] -->
