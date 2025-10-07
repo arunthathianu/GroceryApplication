@@ -38,6 +38,7 @@ public class AdminPage {
 	{
 		//WebElement username_new = driver.findElement(By.xpath("//input[@id='username']"));
 		//username_new.sendKeys(randomname);
+		waitUtility.waitUntilElementIsVisible(driver, username_new);
 		pageUtility.sendDataToElement(username_new, randomname);
 		return this;
 	}
@@ -47,6 +48,7 @@ public class AdminPage {
 	{
 		//WebElement password_new = driver.findElement(By.xpath("//input[@id='password']"));
 		//password_new.sendKeys(randompassword);
+		waitUtility.waitUntilElementIsVisible(driver, password_new);
 		pageUtility.sendDataToElement(password_new, randompassword);
 		return this;
 	}
@@ -57,6 +59,7 @@ public class AdminPage {
 		//WebElement dropdown = driver.findElement(By.xpath("//Select[@id='user_type']"));
 		//Select select = new Select(dropdown);
 		//select.selectByVisibleText(usertype);
+		waitUtility.waitUntilElementIsSelected(driver, dropdown);
 		pageUtility.selectDataWithVisibleText(dropdown, usertype);
 		return this;
 	}
@@ -75,6 +78,7 @@ public class AdminPage {
 	public boolean newAlert_isDisplayed()
 	{
 		//WebElement newUserAddedAlert = driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
+		waitUtility.waitUntilElementIsVisible(driver, newUserAddedAlert);
 		boolean isNewUserAddedAlert = newUserAddedAlert.isDisplayed();
 		return isNewUserAddedAlert;
 	}
@@ -94,6 +98,7 @@ public class AdminPage {
 	{
 //		WebElement search_username = driver.findElement(By.xpath("//input[@id='un']"));
 //		search_username.sendKeys(randomname);
+		waitUtility.waitUntilElementIsVisible(driver, search_username);
 		pageUtility.sendDataToElement(search_username, randomname);
 		return this;
 	}

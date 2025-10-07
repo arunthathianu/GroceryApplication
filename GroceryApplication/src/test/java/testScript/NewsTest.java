@@ -51,14 +51,16 @@ public class NewsTest extends TestNGBase{
 		//newsPage.news_morinfo();
 		newsPage = homepage.news_morinfo();
 		
-		newsPage.addNewNews();
+		newsPage.addNewNews().enterNewNews().saveNewNews();
 		
-		newsPage.enterNewNews();
-		
-		newsPage.saveNewNews();
-		
-		newsPage.addedNewNewsAlert();
-		
+//		newsPage.addNewNews();
+//		
+//		newsPage.enterNewNews();
+//		
+//		newsPage.saveNewNews();
+//		
+//		newsPage.addedNewNewsAlert();
+//		
 //		WebElement news_moreinfo = driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']"));
 //		news_moreinfo.click();
 //		
