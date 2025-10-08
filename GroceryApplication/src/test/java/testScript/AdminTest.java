@@ -16,7 +16,7 @@ import utilities.FakerUtility;
 
 public class AdminTest extends TestNGBase{
 	
-	AdminPage adminPage = new AdminPage(driver);
+	AdminPage adminPage;
 	HomePage home_page;
 	
 	@Test(priority = 1)
@@ -105,7 +105,8 @@ public class AdminTest extends TestNGBase{
 //		login.enterPassword(passwordValue);
 //		login.clickSignIN();
 		
-		login.enterUserName(usernameValue).enterPassword(passwordValue).clickSignIN();
+		login.enterUserName(usernameValue).enterPassword(passwordValue);
+		home_page = login.clickSignIN();
 		
 		FakerUtility fakerUtility = new FakerUtility();
 		String randomname = fakerUtility.createRandomUserName();
@@ -163,12 +164,13 @@ public class AdminTest extends TestNGBase{
 //		login.enterUserName(usernameValue);
 //		login.enterPassword(passwordValue);
 //		login.clickSignIN();
-		login.enterUserName(usernameValue).enterPassword(passwordValue).clickSignIN();
+		login.enterUserName(usernameValue).enterPassword(passwordValue);
+		home_page = login.clickSignIN();
 		
 //		WebElement reset_button = driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-warning']"));
 //		reset_button.click();
 		
-		adminPage.resetbuttonClick();
+		 home_page = adminPage.resetbuttonClick();
 		
 		//WebElement adminUserTableDisplayedOnClickOfReset = driver.findElement(By.xpath("//h4[@class='card-title' and text() ='Admin Users']"));
 		boolean isAdminUserTableDisplayedOnClickOfReset = adminPage.searchUserTableDisplay();

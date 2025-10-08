@@ -99,7 +99,8 @@ public class NewsTest extends TestNGBase{
 //		signIn_button.click();
 		
 		LoginPage login = new LoginPage(driver);
-		login.enterUserName(usernameValue).enterPassword(passwordValue).clickSignIN();
+		login.enterUserName(usernameValue).enterPassword(passwordValue);
+		homepage = login.clickSignIN();
 		
 //		WebElement news_moreinfo = driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']"));
 //		news_moreinfo.click();

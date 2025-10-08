@@ -7,44 +7,16 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testScript.LoginTest">
-        <methods>
-          <include name="driverQuit"/>
-          <include name="browserclose"/>
-          <include name="initializebrowser"/>
-          <include name="verifyValidUserNamePasswordLoginCredentials"/>
-          <include name="verifyInValidUserNameInValidPasswordLoginCredentials"/>
-          <include name="verifyValidUserNameInValidPasswordLoginCredentials"/>
-          <include name="verifyInValidUserNameValidPasswordLoginCredentials"/>
-        </methods>
-      </class> <!-- testScript.LoginTest -->
-      <class name="testScript.HomeTest">
-        <methods>
-          <include name="driverQuit"/>
-          <include name="verifyLogout"/>
-          <include name="browserclose"/>
-          <include name="initializebrowser"/>
-        </methods>
-      </class> <!-- testScript.HomeTest -->
       <class name="testScript.AdminTest">
         <methods>
-          <include name="verifyresetUser"/>
           <include name="driverQuit"/>
+          <include name="verifyresetUser"/>
           <include name="browserclose"/>
           <include name="verifyAddUser"/>
           <include name="initializebrowser"/>
           <include name="verifysearchUser"/>
         </methods>
       </class> <!-- testScript.AdminTest -->
-      <class name="testScript.NewsTest">
-        <methods>
-          <include name="driverQuit"/>
-          <include name="browserclose"/>
-          <include name="initializebrowser"/>
-          <include name="verifyReturnHomePage"/>
-          <include name="verifyAddNews"/>
-        </methods>
-      </class> <!-- testScript.NewsTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

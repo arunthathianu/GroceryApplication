@@ -43,7 +43,7 @@ public class TestNGBase {
 		prop.load(f);
 		if(browser.equalsIgnoreCase("Chrome")) {
 			//driver=new ChromeDriver();
-			ChromeOptions options = new ChromeOptions();
+			ChromeOptions options = new ChromeOptions(); //to prevent the password leak detection pop-up
 			Map<String,Object> prefs=new HashMap<>();
 			prefs.put("profile.password_manager_leak_detection", false);
 			options.setExperimentalOption("prefs", prefs);

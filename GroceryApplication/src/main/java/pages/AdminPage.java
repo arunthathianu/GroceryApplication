@@ -11,6 +11,7 @@ import utilities.WaitUtility;
 
 public class AdminPage {
 	
+	
 	public WebDriver driver;
 	PageUtility pageUtility = new PageUtility();
 	WaitUtility waitUtility = new WaitUtility();
@@ -139,13 +140,13 @@ public class AdminPage {
 	}
 	
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-warning']")WebElement reset_button;
-	public AdminPage resetbuttonClick()
+	public HomePage resetbuttonClick()
 	{
 		//WebElement reset_button = driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-warning']"));
 //		reset_button.click();
 		waitUtility.waitUntilClickable(driver, reset_button);
 		pageUtility.clickOnElement(reset_button);
-		return this;
+		return new HomePage(driver);
 	}
 	
 	@FindBy(xpath = "//h4[@class='card-title' and text() ='Admin Users']")WebElement adminUserTableDisplayedOnClickOfReset;
