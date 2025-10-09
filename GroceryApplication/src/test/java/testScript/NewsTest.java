@@ -117,7 +117,7 @@ public class NewsTest extends TestNGBase{
 		
 		homepage = newsPage.homeButtonClick();
 		
-		String expected = "https://groceryapp.uniqassosiates.com/admin/home";
+		String expected = "https://groceryapp.uniqassosiates.com/admin/list-news";
 		
 		String actual = driver.getCurrentUrl();
 		

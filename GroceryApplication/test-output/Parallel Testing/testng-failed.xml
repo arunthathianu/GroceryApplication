@@ -13,7 +13,7 @@
           <include name="browserclose"/>
           <include name="initializebrowser"/>
           <include name="verifyValidUserNamePasswordLoginCredentials"/>
-          <include name="verifyInValidUserNameInValidPasswordLoginCredentials"/>
+          <include name="verifyInValidUserNameInValidPasswordLoginCredentials" invocation-numbers="0"/>
           <include name="verifyValidUserNameInValidPasswordLoginCredentials"/>
           <include name="verifyInValidUserNameValidPasswordLoginCredentials"/>
         </methods>

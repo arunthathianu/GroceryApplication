@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import constant.Constants;
 import utilities.PageUtility;
@@ -54,25 +55,26 @@ public class AdminPage {
 		return this;
 	}
 	
-	@FindBy(xpath =  "//Select[@id='user_type']")WebElement dropdown;
+	@FindBy(xpath =  "//select[@id='user_type']")WebElement dropdown;
 	public AdminPage send_UserType(String usertype)
 	{
 		//WebElement dropdown = driver.findElement(By.xpath("//Select[@id='user_type']"));
 		//Select select = new Select(dropdown);
 		//select.selectByVisibleText(usertype);
-		waitUtility.waitUntilElementIsSelected(driver, dropdown);
+		System.out.println("user type is "+ usertype);
+		//waitUtility.waitUntilElementIsSelected(driver, dropdown);
 		pageUtility.selectDataWithVisibleText(dropdown, usertype);
 		return this;
 	}
 	
 	@FindBy(xpath = "//button[@name='Create']")WebElement save;
-	public AdminPage save_click()
+	public void save_click()
 	{
 		//WebElement save = driver.findElement(By.xpath("//button[@name='Create']"));
 		//save.click();
 		waitUtility.waitUntilClickable(driver, save);
 		pageUtility.clickOnElement(save);
-		return this;
+		
 	}
 	
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")WebElement newUserAddedAlert;
@@ -112,8 +114,11 @@ public class AdminPage {
 //		Select select = new Select(dropdown);
 //		
 //		select.selectByVisibleText("Admin");
-		waitUtility.waitUntilElementIsSelected(driver, userTypedropdown);
+		
+		waitUtility.waitUntilElementIsVisible(driver, userTypedropdown);
+		
 		pageUtility.selectDataWithVisibleText(userTypedropdown, Constants.ADMINUSER);
+		
 		return this;
 	}
 	
@@ -140,13 +145,13 @@ public class AdminPage {
 	}
 	
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-warning']")WebElement reset_button;
-	public HomePage resetbuttonClick()
+	public AdminPage resetbuttonClick()
 	{
 		//WebElement reset_button = driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-warning']"));
 //		reset_button.click();
 		waitUtility.waitUntilClickable(driver, reset_button);
 		pageUtility.clickOnElement(reset_button);
-		return new HomePage(driver);
+		return this;
 	}
 	
 	@FindBy(xpath = "//h4[@class='card-title' and text() ='Admin Users']")WebElement adminUserTableDisplayedOnClickOfReset;

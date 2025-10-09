@@ -49,7 +49,7 @@ public class AdminTest extends TestNGBase{
 		
 		
 		adminPage = home_page.admin_moreInfo();
-		adminPage.ClickNewButton().send_UserName(randomname).send_password(randompassword).send_UserType(Constants.ADMINUSER);
+		adminPage.ClickNewButton().send_UserName(randomname).send_password(randompassword).send_UserType(Constants.ADMINUSER).save_click();
 //		adminPage.ClickNewButton();
 //		adminPage.send_UserName(randomname);
 //		adminPage.send_password(randompassword);
@@ -136,6 +136,7 @@ public class AdminTest extends TestNGBase{
 //		adminPage.selectUserType();
 //		adminPage.search_button();
 		
+		adminPage = home_page.admin_moreInfo();
 		adminPage.serachButtonClick().searchUserName(randomname).selectUserType().search_button();
 		
 		//WebElement searchedUserTable = driver.findElement(By.xpath("//h4[@class='card-title' and text()='Admin Users']"));
@@ -148,8 +149,8 @@ public class AdminTest extends TestNGBase{
 	@Test(description = "Reset the typed user in textbox")
 	public void verifyresetUser() throws IOException
 	{
-		String usernameValue = ExcelUtility.getStringData(1, 0, "LoginPage");
-		String passwordValue = ExcelUtility.getStringData(1, 1, "LoginPage");
+		String usernameValue = ExcelUtility.getStringData(1, 0, Constants.LOGINSHEET);
+		String passwordValue = ExcelUtility.getStringData(1, 1, Constants.LOGINSHEET);
 //		
 //		WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
 //		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
@@ -169,8 +170,8 @@ public class AdminTest extends TestNGBase{
 		
 //		WebElement reset_button = driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-warning']"));
 //		reset_button.click();
-		
-		 home_page = adminPage.resetbuttonClick();
+		adminPage =home_page.admin_moreInfo();
+		adminPage.resetbuttonClick();
 		
 		//WebElement adminUserTableDisplayedOnClickOfReset = driver.findElement(By.xpath("//h4[@class='card-title' and text() ='Admin Users']"));
 		boolean isAdminUserTableDisplayedOnClickOfReset = adminPage.searchUserTableDisplay();
